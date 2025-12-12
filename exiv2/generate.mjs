@@ -26,7 +26,6 @@ const tagsjs = `/**
 ${tagGroups.map(generateTagGroup).join('\n')}
 `
 writeFileSync(join(wd, '..', 'tags.js'), tagsjs);
-//console.log(tagsjs);
 
 const getType = (group, tag, type) => {
   if (numberArrayTags[group]?.includes(tag)) return 'number[]';
@@ -105,7 +104,7 @@ declare namespace exif {
   type Exif = {
     bigEndian: boolean
     ${groups.map((group) => `${group}?: Partial<${group}Tags>`).join('\n    ')}
-    ThumbnailTags?: Partial<ImageTags>
+    Thumbnail?: Partial<ImageTags>
   }
 
 ${tagGroups.map(generateTagGroupTypes).join('\n\n')}

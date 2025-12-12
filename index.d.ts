@@ -14,7 +14,7 @@ declare namespace exif {
     Photo?: Partial<PhotoTags>
     Iop?: Partial<IopTags>
     GPSInfo?: Partial<GPSInfoTags>
-    ThumbnailTags?: Partial<ImageTags>
+    Thumbnail?: Partial<ImageTags>
   }
 
   type ImageTags = Record<string, GenericTag> & {
